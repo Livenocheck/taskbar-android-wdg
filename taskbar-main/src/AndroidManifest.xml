@@ -1,0 +1,30 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sokolgrakk.taskbarwidgets">
+
+    <application>
+        <!-- Виджет 1: Меню приложений -->
+        <receiver
+            android:name=".AppDrawerWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/app_drawer_widget_info" />
+        </receiver>
+
+        <!-- Виджет 2: Глобальный поиск -->
+        <receiver
+            android:name=".GlobalSearchWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/global_search_widget_info" />
+        </receiver>
+    </application>
+
+</manifest>
